@@ -6,8 +6,10 @@ function App() {
   return (
     <div className="App">
       <div>Olivier - ReactJS</div>
-      <Button><img src='/img/ok.png'/></Button>
-      <Button text="cancel"></Button>
+      <Button onClick={(unParamDeLenfant)=>{
+        console.log('fonction envoyee par le parent', unParamDeLenfant);
+      }}><img src='/img/ok.png'/></Button>
+      <Button><img src='/img/cancel.png'/></Button>
     </div>
   );
 }
