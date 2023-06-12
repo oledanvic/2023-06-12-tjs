@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="App">
       <div>Olivier - ReactJS</div>
-      <Button onClick={(unParamDeLenfant)=>{
+      <Button className="primary" onClick={(unParamDeLenfant)=>{
         console.log('fonction envoyee par le parent', unParamDeLenfant);
       }}><img src='/img/ok.png'/></Button>
-      <Button><img src='/img/cancel.png'/></Button>
+      <Button className="error"><img src='/img/cancel.png'/></Button>
     </div>
   );
 }

@@ -7,11 +7,14 @@ import PropTypes from 'prop-types'
  */
 const Button=(props)=>{
     return (
-        <button type={props.type} className={style.Button} onClick={(evt)=>{
-            if(undefined !== props.onClick && typeof props.onClick === 'function') {
-                props.onClick('click');
-            }
-        }}>
+        <button type={props.type}
+                className={`${style.Button} btn${undefined!==props.className? ' ' + props.className:''}`}
+                onClick={(evt)=>{
+                    if(undefined !== props.onClick && typeof props.onClick === 'function') {
+                    props.onClick('click');
+                    }
+                }
+            }>
             {props.children}
         </button>
     );
@@ -20,12 +23,15 @@ const Button=(props)=>{
 Button.propTypes={
     children: PropTypes.any.isRequired,
     type: PropTypes.oneOf(['button', 'reset', 'submit']).isRequired,
-    onClick: PropTypes.func.isRequired
+    bgColor: PropTypes.string,
+    onClick: PropTypes.func.isRequired,
+    className: PropTypes.oneOf(['primary', 'error'])
 }
 
 Button.defaultProps={
     type:'button',
-    onClick: ()=>{console.log('click');}
+    onClick: ()=>{console.log('click');},
+    bgColor: 'grey'
 }
 
 export default Button;
