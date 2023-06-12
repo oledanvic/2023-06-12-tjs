@@ -13,3 +13,7 @@
 .Button img {
     height: 24px;
 }
+
+.clicked{
+    border: 3px solid red !important;
+}
