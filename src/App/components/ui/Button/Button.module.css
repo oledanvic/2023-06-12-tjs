@@ -14,3 +14,7 @@
     box-shadow: 20px 20px 25px grey;
     border: 1px solid white;
 }
+
+.Button img {
+    height: 24px;
+}

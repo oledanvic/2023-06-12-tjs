@@ -5,9 +5,9 @@ import Button from './components/ui/Button/Button'
 function App() {
   return (
     <div className="App">
-      <Button></Button>
-      <Button></Button>
-      <Button></Button>
+      <div>Olivier - ReactJS</div>
+      <Button><img src='/img/ok.png'/></Button>
+      <Button text="cancel"></Button>
     </div>
   );
 }
