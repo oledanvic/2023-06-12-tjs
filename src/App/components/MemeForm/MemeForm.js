@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import style from './MemeForm.module.css';
 import { emptyMeme } from 'orsys-tjs-meme'
 import Button from '../ui/Button/Button';
+import { useSelector } from 'react-redux';
 const MemeForm = (props) => {
   return (
     <div className={style.MemeForm} data-testid="MemeForm">
@@ -138,3 +139,30 @@ MemeForm.propTypes = {
 MemeForm.defaultProps = {};
 
 export default MemeForm;
+
+/*
+const ConnectedMemeForm=(props)=>{
+  const currentMeme=useSelector(s=>s)
+  const storeDispatch=useDispatch();
+  return (
+    <MemeForm {...props} current={currentMeme} onMemeChange={(meme)=>{
+      storeDispatch({type:'current/update', payload:meme})
+    }}/>
+  )
+}
+*/
+
+
+/*
+function mapStateToProps(storeState, ownProps) {
+  return {...props, current:storeState}
+}
+
+function mapDispatchToProps(storeDispatch) {
+  return {onMemeChange:(meme)=>{
+    storeDispatch({type:'current/update', payload:meme})
+  }}
+}
+
+export const ConnectedMemeForm=connect(mapStateToProps, mapDispatchToProps)(MemeForm)
+*/
