@@ -1,33 +1,29 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import Button from './components/ui/Button/Button'
+import FlexV3Grow from './components/layout/FlexV3Grow/FlexV3Grow';
+import Header from './components/ui/Header/Header';
+import NavBar from './components/ui/NavBar/NavBar.lazy';
+import FlexH1Grow from './components/layout/FlexH1Grow/FlexH1Grow';
+import {MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme';
+import MemeForm from './components/MemeForm/MemeForm';
+import Footer from './components/ui/Footer/Footer';
 
-function App() {
-  const [counter, setcounter] = useState(0);
-  
-  useEffect(()=>{
-    console.log('valeur post setCounter :', counter);
-    //return () => {};
-  }, [counter]);
+const App = () => {
+return (
+  <div className="App">
+    <FlexV3Grow>
+      <Header/>
+      <NavBar/>
+      <FlexH1Grow>
+        <MemeSVGViewer meme={emptyMeme} image={undefined} basePath=''/>
+        <MemeForm/>
+      </FlexH1Grow>
+      <Footer/>
+    </FlexV3Grow>
+  </div>
+)
 
-  useEffect(()=>{
-    setcounter(3);
-  }, []);
-
-  return (
-    <div className="App">
-      La valeur de counter : {counter}
-      <br/>
-      <Button className="error" onClick={()=>{
-        setcounter(counter - 1);
-        console.log(counter);
-      }}>-1</Button>
-      <Button onClick={()=>{
-        setcounter(counter + 1);
-        console.log(counter);
-      }}>+1</Button>
-    </div>
-  );
 }
 
 export default App;
