@@ -8,7 +8,7 @@ import FlexH1Grow from './components/layout/FlexH1Grow/FlexH1Grow';
 import {MemeSVGViewer, emptyMeme} from 'orsys-tjs-meme';
 import MemeForm from './components/MemeForm/MemeForm';
 import Footer from './components/ui/Footer/Footer';
-
+import datas from './db.json';
 const App = () => {
 return (
   <div className="App">
