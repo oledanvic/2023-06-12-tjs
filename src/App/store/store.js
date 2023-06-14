@@ -1,7 +1,7 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import currentReducer from './currentSlice.js';
-import ressourcesReducer from "./ressourcesSlice.js";
-
+import {configureStore,combineReducers} from '@reduxjs/toolkit'
+import currentReducer, { saveCurrent, update } from './currentSlice'
+import ressourcesReducer, { fetchAllRessources } from './ressourcesSlice'
+import {emptyMeme} from 'orsys-tjs-meme'
 const store=configureStore({
     reducer:combineReducers({
         ressources:ressourcesReducer,
@@ -9,12 +9,14 @@ const store=configureStore({
     }),
     devTools:true
 })
-/* store.subscribe(()=>{
-    console.log(store.getState());
-});
-
-store.dispatch({type:'toto'});
-store.dispatch({type:'current/update', payload:{titre:'coucou'}});
-store.dispatch({type:'current/clear'}); */
+// store.subscribe(()=>{
+//     console.trace(store.getState())
+// })
+// store.dispatch({type:'toto'})
+//  store.dispatch(update(emptyMeme))
+// store.dispatch({type:'current/update', payload:{titre:'coucou'}})
+// store.dispatch({type:'current/clear'})
+store.dispatch(fetchAllRessources())
+//store.dispatch(saveCurrent(emptyMeme))
 
 export default store
