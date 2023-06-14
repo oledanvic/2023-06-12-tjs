@@ -12,7 +12,7 @@ const MemeThumbnail = (props) => {
   return (
     <div className={style.MemeThumbnail} data-testid="MemeThumbnail">
       {
-        props.memes.map((m, i) => <div key={'thumbnail-i' + i}>
+        props.memes.map((m, i) => <div key={'thumbnail-' + i}>
           <Link to={'/meme/' + m.id}>
             <MemeSVGViewer meme={m} image={props.images.find(im => im.id === m.imageId)} basePath='' /><br />{m.titre}
           </Link>

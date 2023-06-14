@@ -7,8 +7,8 @@
     overflow-y: scroll;
 }
 .MemeThumbnail>div{
-    width:  30vw;
-    height: 25vh;
+    width:  20vw;
+    height: 15vh;
     text-align: center;
 }
 .MemeThumbnail>div svg{
