@@ -9,6 +9,9 @@ import datas from './db.json'
 import MemeForm, { MemeFormStoredConnected } from './components/MemeForm/MemeForm'
 import store from './store/store'
 import MemeSvgViewer from './components/ui/MemeSvgViewer/MemeSvgViewer'
+import { Routes, Route } from 'react-router-dom'
+import Editor from './pages/editor'
+import {MemeThumbnailStoreConnected} from './components/ui/MemeThumbnail/MemeThumbnail'
 
 const App = () => {
  
@@ -16,19 +19,22 @@ const App = () => {
   useEffect(() => {
   
   }, [])
-    return (
-      <div className="App">
-        <FlexV3Grow>
-          <Header />
-          <NavBar />
-          <FlexH1Grow>
-            <MemeSvgViewer basePath=''/>
-            <MemeFormStoredConnected />
-          </FlexH1Grow>
-          <Footer />
-        </FlexV3Grow>
-      </div>
-    )
-  }
+  return (
+    <div className="App">
+      <FlexV3Grow>
+        <Header />
+        <NavBar />
+        <Routes>
+        <Route path='/' element={<div><h1>Hello React JS !!!</h1></div>} />
+          <Route path='/thumbnail' element={<MemeThumbnailStoreConnected/>} />
+          <Route path='/meme' element={<Editor/>} />
+          <Route path='/meme/:id' element={<Editor/>} />
+        </Routes>
+       
+        <Footer />
+      </FlexV3Grow>
+    </div>
+  )
+}
   
   export default App

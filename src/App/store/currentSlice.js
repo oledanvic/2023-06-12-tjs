@@ -11,6 +11,7 @@ const currentSlice = createSlice({
             Object.assign(state, action.payload)
         },
         clear: (state) => {
+            delete state.id
             Object.assign(state, emptyMeme)
         }
     },
